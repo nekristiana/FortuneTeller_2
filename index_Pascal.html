@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+<script type="text/javascript" src="lyrics_output_1.js"></script>
+<script type="text/javascript" src="lyrics_output_2.js"></script>
+<script type="text/javascript" src="lyrics_output_3.js"></script>
+<script type="text/javascript" src="lyrics_output_4.js"></script>
+<script type="text/javascript" src="lyrics_output_5.js"></script>
+<script type="text/javascript" src="lyrics_output_6.js"></script>
+<!--<script type="text/javascript" src="lyrics_output_7.js"></script>
+<script type="text/javascript" src="lyrics_output_8.js"></script>
+<script type="text/javascript" src="lyrics_output_9.js"></script>-->
+
+<script type="text/javascript">
+    var scrolldelay;
+    var autoscroll = false;
+
+    function toggleAutoSpin( ) {
+        clearInterval( scrolldelay );
+        
+        autoscroll = ( autoscroll == false );
+
+        if ( autoscroll ) scrolldelay = setInterval( function( ) {
+            window.scrollBy( 0,10 );
+        }, 40 );
+    }
+    
+    window.onload = function ( ) {
+        const div = document.getElementsByClassName('tunnel')[0];
+        const item_interal = 360 / lyrics_output[0].length; 
+        //edit this somehow. that EACH output is divided by 360
+        
+        lyrics_output.forEach(function(item, index) {
+            let angle = index * item_interal;
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + /*' by '+ item.artist +*/ '</li>';
+            
+        });
+        
+        
+        lyrics_output2.forEach(function(item, index) {
+            let angle = index * item_interal;
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song /*+ ' by '+ item.artist*/ + '</li>';
+        });
+        
+         lyrics_output3.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + /*' by '+ item.artist +*/ '</li>';
+        }); 
+        
+        lyrics_output4.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + /*' by '+ item.artist +*/ '</li>';
+        });
+        
+        lyrics_output5.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + /*' by '+ item.artist +*/ '</li>';
+        });
+ 
+/*        lyrics_output6.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + ' by '+ item.artist + '</li>';
+        });*/
+        
+/*        lyrics_output7.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + ' by '+ item.artist + '</li>';
+        });
+        
+        lyrics_output8.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + ' by '+ item.artist + '</li>';
+        });
+        
+        lyrics_output9.forEach(function(item, index) {
+            let angle = index * (item_interal / 360);
+            
+            div.innerHTML += '<li class="artist ring" style="transform: rotateX(' + angle + 'deg) translateY(-200px) scaleX(-1)">' + item.song + ' by '+ item.artist + '</li>';
+        });*/
+        
+        
+        document.onclick = toggleAutoSpin;
+        if ( autoscroll ) window.trigger( 'click' );
+        
+        toggleAutoSpin( );
+    }
+    
+</script>    
+    
+  <title>Fortune Teller</title>
+
+  <link rel="stylesheet" href="index.css" />
+    
+<link href="https://fonts.googleapis.com/css?family=Alegreya:700|Press+Start+2P|Solway:700|Tomorrow&display=swap" rel="stylesheet">
+    
+<style>
+    
+body {
+      background: linear-gradient(141deg, black 3%, beige 15%, green 76%, black 100% );
+}
+
+    ::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 200px black; 
+  border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+    height: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: yellow; 
+}
+    
+</style>
+
+</head>
+        
+<body>
+
+
+<h1> Dear fortune wheel, give me a hint. <br> What should I do? </h1>
+    
+    
+<h4>&uarr;</h4>
+
+    
+    <div class="scene">
+  <div class="wrapper">
+		<ul class="tunnel"></ul>
+        </div>
+    </div>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- include .js files here -->
+<script src="script.js"></script>
+    
+</body>
+</html>
+
